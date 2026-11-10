@@ -93,7 +93,7 @@
       "path": "scripts/image_gen.py",
       "upstream_git_blob_sha": "4b7403ba1cad93ee67f8d51f327587c1992c59bf",
       "modified": true,
-      "sha256": "06bf14ac4ee961060698f234c58a8e78ea98b311e28929d237513ac5939c4f2c"
+      "sha256": "6560f894344bd2b19868686538a6c172875fba081385f9b47f94ac0958432d2c"
     },
     {
       "upstream_path": "skills/codex-ppt/scripts/image_providers/__init__.py",
@@ -128,7 +128,7 @@
       "path": "scripts/image_providers/openai_compatible.py",
       "upstream_git_blob_sha": "2184a79074af94d9217bba9064ec175b51160812",
       "modified": true,
-      "sha256": "9ca5521c91cdd8b904ad43ee596738c95574d30e7f94bb66b6811e9ed5dccb2d"
+      "sha256": "f7670651e0d0ff65404b2ac25ee51519f57791ae4d843a85151f99858151b9a9"
     },
     {
       "upstream_path": "skills/codex-ppt/scripts/record_slide_blocker.py",
