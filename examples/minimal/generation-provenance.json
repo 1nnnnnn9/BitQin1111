@@ -1,0 +1,135 @@
+{
+  "context": "Maintainer generic integration demonstration; no customer approval is claimed",
+  "backend": "built-in image tool",
+  "tool": "image_gen",
+  "model": "built-in default",
+  "mode": "generate",
+  "slides": [
+    {
+      "number": 1,
+      "reserved_zones": [
+        {
+          "box": [
+            70,
+            95,
+            1050,
+            90
+          ],
+          "purpose": "texts",
+          "object": "标题"
+        },
+        {
+          "box": [
+            75,
+            265,
+            600,
+            150
+          ],
+          "purpose": "texts",
+          "object": "正文"
+        },
+        {
+          "box": [
+            755,
+            575,
+            455,
+            60
+          ],
+          "purpose": "texts",
+          "object": "标签"
+        }
+      ],
+      "output": "origin_image/slide_01.png",
+      "sha256": "9e067db083f0bbd2e516d8e45611ca7821d51e3021f916d53c860df6df95a173",
+      "recorded_at": "2026-11-10T10:54:12Z",
+      "qa_note": "Inspected: text-free, quiet top/left and lower-right label zones, 16:9 composition.",
+      "generator_task": "main",
+      "planned_prompt": "Create a professional slide BACKGROUND AND NON-TEXT ILLUSTRATION ONLY. Landscape canvas aspect 1280:720. ABSOLUTELY NO TEXT: no titles, words, letters, numbers, labels, pseudo-writing, watermarks, signatures, legends or axes. Do not draw placeholder text or white cover-up boxes. The actual editable words and supplied original figures will be placed afterward in PowerPoint. Keep every reserved rectangle genuinely quiet and empty with a clean low-detail surface. Place all illustration outside those rectangles; do not invent experimental data. \nVisual style (ignore any legacy instruction to draw text): {\"name\": \"清爽专业风\", \"palette\": [\"#FFFFFF\", \"#133C52\", \"#20A9A0\"], \"art\": \"Minimal white, navy and teal editorial teaching illustration, subtle depth, no typography\"}\nIllustration brief: An elegant small isometric arrangement on the right: stacked translucent sheets and one smooth teal sphere suggesting an idea becoming a presentation. Art only in x=780..1210, y=220..530. White background and generous negative space. The rest is empty; no letters on sheets.\nReserved rectangles in 96-DPI canvas coordinates: [{\"box\": [70, 95, 1050, 90], \"purpose\": \"texts\", \"object\": \"标题\"}, {\"box\": [75, 265, 600, 150], \"purpose\": \"texts\", \"object\": \"正文\"}, {\"box\": [755, 575, 455, 60], \"purpose\": \"texts\", \"object\": \"标签\"}]",
+      "actual_prompt": "Create a professional slide BACKGROUND AND NON-TEXT ILLUSTRATION ONLY. Landscape canvas 16:9 (1280:720). ABSOLUTELY NO TEXT: no titles, words, letters, numbers, labels, pseudo-writing, watermarks, signatures, legends or axes. No placeholder text or cover-up white boxes. White background and generous negative space; quiet blank areas at title x70 y95 w1050 h90, body x75 y265 w600 h150, label x755 y575 w455 h60, using 1280x720 coordinates. These rectangles must not be drawn as boxes. Visual style 清爽专业风, minimal white, navy #133C52 and teal #20A9A0 editorial teaching illustration, subtle depth, polished restrained. An elegant small isometric arrangement on right ONLY x780..1210,y220..530: stacked translucent blank sheets and one smooth teal sphere suggesting idea becoming presentation. All other areas pristine white. No text anywhere, no letters on sheets."
+    },
+    {
+      "number": 2,
+      "reserved_zones": [
+        {
+          "box": [
+            70,
+            75,
+            1120,
+            85
+          ],
+          "purpose": "texts",
+          "object": "标题"
+        },
+        {
+          "box": [
+            75,
+            245,
+            620,
+            230
+          ],
+          "purpose": "texts",
+          "object": "正文"
+        },
+        {
+          "box": [
+            755,
+            575,
+            455,
+            60
+          ],
+          "purpose": "texts",
+          "object": "标签"
+        }
+      ],
+      "output": "origin_image/slide_02.png",
+      "sha256": "49da8d3b2812e9e7ef7b39f238493bd94bf5406ad931b292cb6e32707781186f",
+      "recorded_at": "2026-11-10T10:58:00Z",
+      "qa_note": "Inspected: text-free right-side process objects, reserved title/body/label zones clear.",
+      "generator_task": "/root/generic_background_02",
+      "planned_prompt": "Create a professional slide BACKGROUND AND NON-TEXT ILLUSTRATION ONLY. Landscape canvas aspect 1280:720. ABSOLUTELY NO TEXT: no titles, words, letters, numbers, labels, pseudo-writing, watermarks, signatures, legends or axes. Do not draw placeholder text or white cover-up boxes. The actual editable words and supplied original figures will be placed afterward in PowerPoint. Keep every reserved rectangle genuinely quiet and empty with a clean low-detail surface. Place all illustration outside those rectangles; do not invent experimental data. \nVisual style (ignore any legacy instruction to draw text): {\"name\": \"清爽专业风\", \"palette\": [\"#FFFFFF\", \"#133C52\", \"#20A9A0\"], \"art\": \"Minimal white, navy and teal editorial teaching illustration, subtle depth, no typography\"}\nIllustration brief: Right side only x=770..1210,y=220..520: three small abstract objects arranged horizontally, an empty folder, a polished teal cube, a stack of blank sheets, linked with thin teal flow arrows. No icon letters or text. Keep all left and top areas pure white.\nReserved rectangles in 96-DPI canvas coordinates: [{\"box\": [70, 75, 1120, 85], \"purpose\": \"texts\", \"object\": \"标题\"}, {\"box\": [75, 245, 620, 230], \"purpose\": \"texts\", \"object\": \"正文\"}, {\"box\": [755, 575, 455, 60], \"purpose\": \"texts\", \"object\": \"标签\"}]",
+      "actual_prompt": "Create a professional slide BACKGROUND AND NON-TEXT ILLUSTRATION ONLY. Landscape canvas aspect 1280:720. ABSOLUTELY NO TEXT: no titles, words, letters, numbers, labels, pseudo-writing, watermarks, signatures, legends or axes. Do not draw placeholder text or white cover-up boxes. The actual editable words and supplied original figures will be placed afterward in PowerPoint. Keep every reserved rectangle genuinely quiet and empty with a clean low-detail surface. Place all illustration outside those rectangles; do not invent experimental data. \nVisual style (ignore any legacy instruction to draw text): {\"name\": \"清爽专业风\", \"palette\": [\"#FFFFFF\", \"#133C52\", \"#20A9A0\"], \"art\": \"Minimal white, navy and teal editorial teaching illustration, subtle depth, no typography\"}\nIllustration brief: Right side only x=770..1210,y=220..520: three small abstract objects arranged horizontally, an empty folder, a polished teal cube, a stack of blank sheets, linked with thin teal flow arrows. No icon letters or text. Keep all left and top areas pure white.\nReserved rectangles in 96-DPI canvas coordinates: [{\"box\": [70, 75, 1120, 85], \"purpose\": \"texts\", \"object\": \"标题\"}, {\"box\": [75, 245, 620, 230], \"purpose\": \"texts\", \"object\": \"正文\"}, {\"box\": [755, 575, 455, 60], \"purpose\": \"texts\", \"object\": \"标签\"}]"
+    },
+    {
+      "number": 3,
+      "reserved_zones": [
+        {
+          "box": [
+            70,
+            75,
+            1120,
+            85
+          ],
+          "purpose": "texts",
+          "object": "标题"
+        },
+        {
+          "box": [
+            835,
+            575,
+            385,
+            60
+          ],
+          "purpose": "texts",
+          "object": "标签"
+        },
+        {
+          "box": [
+            75,
+            245,
+            700,
+            300
+          ],
+          "purpose": "tables",
+          "object": "可编辑检查表"
+        }
+      ],
+      "output": "origin_image/slide_03.png",
+      "sha256": "baffe5c2352cfb4296d82fa78a75aa54e052b71e53c856c4773773d444825a38",
+      "recorded_at": "2026-11-10T10:58:00Z",
+      "qa_note": "Inspected: no text, lens at right, title/table/label zones clear; edge curves stay outside text.",
+      "generator_task": "/root/generic_background_03",
+      "planned_prompt": "Create a professional slide BACKGROUND AND NON-TEXT ILLUSTRATION ONLY. Landscape canvas aspect 1280:720. ABSOLUTELY NO TEXT: no titles, words, letters, numbers, labels, pseudo-writing, watermarks, signatures, legends or axes. Do not draw placeholder text or white cover-up boxes. The actual editable words and supplied original figures will be placed afterward in PowerPoint. Keep every reserved rectangle genuinely quiet and empty with a clean low-detail surface. Place all illustration outside those rectangles; do not invent experimental data. \nVisual style (ignore any legacy instruction to draw text): {\"name\": \"清爽专业风\", \"palette\": [\"#FFFFFF\", \"#133C52\", \"#20A9A0\"], \"art\": \"Minimal white, navy and teal editorial teaching illustration, subtle depth, no typography\"}\nIllustration brief: Right side only x=880..1190,y=240..500: a restrained translucent teal magnifying lens hovering above blank stacked cards; abstract decorative quality inspection metaphor, no ticks shaped as letters, no writing. Pure white left for a table and top for a title.\nReserved rectangles in 96-DPI canvas coordinates: [{\"box\": [70, 75, 1120, 85], \"purpose\": \"texts\", \"object\": \"标题\"}, {\"box\": [835, 575, 385, 60], \"purpose\": \"texts\", \"object\": \"标签\"}, {\"box\": [75, 245, 700, 300], \"purpose\": \"tables\", \"object\": \"可编辑检查表\"}]",
+      "actual_prompt": "Create a professional slide BACKGROUND AND NON-TEXT ILLUSTRATION ONLY. Landscape canvas aspect 1280:720. ABSOLUTELY NO TEXT: no titles, words, letters, numbers, labels, pseudo-writing, watermarks, signatures, legends or axes. Do not draw placeholder text or white cover-up boxes. The actual editable words and supplied original figures will be placed afterward in PowerPoint. Keep every reserved rectangle genuinely quiet and empty with a clean low-detail surface. Place all illustration outside those rectangles; do not invent experimental data. \nVisual style (ignore any legacy instruction to draw text): {\"name\": \"清爽专业风\", \"palette\": [\"#FFFFFF\", \"#133C52\", \"#20A9A0\"], \"art\": \"Minimal white, navy and teal editorial teaching illustration, subtle depth, no typography\"}\nIllustration brief: Right side only x=880..1190,y=240..500: a restrained translucent teal magnifying lens hovering above blank stacked cards; abstract decorative quality inspection metaphor, no ticks shaped as letters, no writing. Pure white left for a table and top for a title.\nReserved rectangles in 96-DPI canvas coordinates: [{\"box\": [70, 75, 1120, 85], \"purpose\": \"texts\", \"object\": \"标题\"}, {\"box\": [835, 575, 385, 60], \"purpose\": \"texts\", \"object\": \"标签\"}, {\"box\": [75, 245, 700, 300], \"purpose\": \"tables\", \"object\": \"可编辑检查表\"}]"
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "upstream": "https://github.com/ningzimu/codex-ppt-skill",
+  "commit": "941dcafe2f23ea4ae61de99e9b22fb0ef3d9e06c",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 ningzimu",
+  "files": [
+    {
+      "upstream_path": "skills/codex-ppt/references/党政红风格.md",
+      "path": "references/styles/党政红风格.md",
+      "upstream_git_blob_sha": "2cb18463cae29d554cd6f1e0e5bdb8c76d2f137a",
+      "modified": false,
+      "sha256": "a72ee5fa667e4ea53ede2a561f84bbf73e415d9aab518e0ffd76cce9cda4dd04"
+    },
+    {
+      "upstream_path": "skills/codex-ppt/references/创意杂志风.md",
+      "path": "references/styles/创意杂志风.md",
+      "upstream_git_blob_sha": "359f5d363b37a5abea7a92856cc5125afa35e5ac",
+      "modified": false,
+      "sha256": "d8c81a620e412f47c490ab0e61b8974bc84e01b35e26f93373914c642776663e"
+    },
+    {
+      "upstream_path": "skills/codex-ppt/references/复古扁平插画风.md",
+      "path": "references/styles/复古扁平插画风.md",
+      "upstream_git_blob_sha": "4c917c0b759a1cb22cce67e5d8de541f0c18d984",
+      "modified": false,
+      "sha256": "094b9034380a6f7050816c3be171e4285335adb2af6673d6a7b04484546676d5"
+    },
+    {
+      "upstream_path": "skills/codex-ppt/references/手绘技术解释风.md",
+      "path": "references/styles/手绘技术解释风.md",
+      "upstream_git_blob_sha": "6de85645910d27ad66ecb8eebf31e29da42f6175",
+      "modified": false,
+      "sha256": "03ed2af2ab0776c0a3b14e468d17b2ef018c14817a74120df7f7d995b7f11921"
+    },
+    {
+      "upstream_path": "skills/codex-ppt/references/手绘白板风.md",
+      "path": "references/styles/手绘白板风.md",
+      "upstream_git_blob_sha": "8676c824cb778623c12d1abf56b882c4e31afc53",
+      "modified": false,
+      "sha256": "e1560db95ce7882f2b874afca96e946ebd91204072af04709642ed396cb68911"
+    },
+    {
+      "upstream_path": "skills/codex-ppt/references/教学课件风.md",
+      "path": "references/styles/教学课件风.md",
+      "upstream_git_blob_sha": "1d3496edd98c87a6596c1df93d917804863cc8c1",
+      "modified": false,
+      "sha256": "997de64c6f94ccef6e89a15cdff3bfe21a33c5bd27f789b6da968592225273f3"
+    },
+    {
+      "upstream_path": "skills/codex-ppt/references/数据仪表盘风.md",
+      "path": "references/styles/数据仪表盘风.md",
+      "upstream_git_blob_sha": "78441a2c7179c9ff6ff804a73a217ae061ce18f3",
+      "modified": false,
+      "sha256": "0619047dd46b60ad81f5226974b649ed3e89a99409f8983d5be5855028c4ac54"
+    },
+    {
+      "upstream_path": "skills/codex-ppt/references/清爽专业风.md",
+      "path": "references/styles/清爽专业风.md",
+      "upstream_git_blob_sha": "9dcd764c39e13746eea51df878d7bd5fb185f68a",
+      "modified": false,
+      "sha256": "e651d6571248c9a3980ebee719ea87847a6dde87876b1cf8d1fbd6dd37b56576"
+    },
+    {
+      "upstream_path": "skills/codex-ppt/references/温暖手工风.md",
+      "path": "references/styles/温暖手工风.md",
+      "upstream_git_blob_sha": "80b3292456b8f91c7d16a0dd0f913032536906e7",
+      "modified": false,
+      "sha256": "ecd61190b4d4b3c330a9d601bc0faf344f43c4d12e4ea7568b69e45795dec75d"
+    },
+    {
+      "upstream_path": "skills/codex-ppt/references/电子墨水杂志风.md",
+      "path": "references/styles/电子墨水杂志风.md",
+      "upstream_git_blob_sha": "62ba3f02b102e41050ba1fd59019b53857586b0f",
+      "modified": false,
+      "sha256": "93d659797c8685d3e6c28a657cc6783b899f21a31d7d01f1608c27c4f92fe59f"
+    },
+    {
+      "upstream_path": "skills/codex-ppt/references/科研答辩风.md",
+      "path": "references/styles/科研答辩风.md",
+      "upstream_git_blob_sha": "a17c5e4542d64e37f478c20e5039f2897e4f86de",
+      "modified": false,
+      "sha256": "7dbf693eb74027503b9e1022de185c084b98171c6c77555db02392e10e1e7f00"
+    },
+    {
+      "upstream_path": "skills/codex-ppt/references/麦肯锡风格.md",
+      "path": "references/styles/麦肯锡风格.md",
+      "upstream_git_blob_sha": "decb48064f377e34b5f94d75beb3a1d5bbe1375f",
+      "modified": false,
+      "sha256": "8cd4c90907aac68405a0e38cb36ca8c6a34f1b32d98f5ff217fb0d24d5e5ceb6"
+    },
+    {
+      "upstream_path": "skills/codex-ppt/scripts/image_gen.py",
+      "path": "scripts/image_gen.py",
+      "upstream_git_blob_sha": "4b7403ba1cad93ee67f8d51f327587c1992c59bf",
+      "modified": true,
+      "sha256": "06bf14ac4ee961060698f234c58a8e78ea98b311e28929d237513ac5939c4f2c"
+    },
+    {
+      "upstream_path": "skills/codex-ppt/scripts/image_providers/__init__.py",
+      "path": "scripts/image_providers/__init__.py",
+      "upstream_git_blob_sha": "9c678c0c93d63bf5cb0296102ccc5abfbad1ca0f",
+      "modified": false,
+      "sha256": "f4a8db421052b42be962037d7a3df74bec598a67be4bcae6ac3aaefff64a5c3e"
+    },
+    {
+      "upstream_path": "skills/codex-ppt/scripts/image_providers/atlascloud.py",
+      "path": "scripts/image_providers/atlascloud.py",
+      "upstream_git_blob_sha": "4a14ed5018cfa5218ec54a3770298d26d10e3708",
+      "modified": false,
+      "sha256": "bcdc6c35afd7c483f01125cb5788ef852c16cd9525eddebb6b206673193fa450"
+    },
+    {
+      "upstream_path": "skills/codex-ppt/scripts/image_providers/base.py",
+      "path": "scripts/image_providers/base.py",
+      "upstream_git_blob_sha": "1438bb6896e42bd0aa932008e93bca00263db153",
+      "modified": false,
+      "sha256": "027468265d72c0bf4e4372bdbfbe8cf12759f929e873fa10c16c13577a468296"
+    },
+    {
+      "upstream_path": "skills/codex-ppt/scripts/image_providers/factory.py",
+      "path": "scripts/image_providers/factory.py",
+      "upstream_git_blob_sha": "bcf59bbc1ac7df056504d4a7a9296632bfb4631e",
+      "modified": false,
+      "sha256": "d7d72145ea38da394e315b2a2c0990bf7fdf24cd10dd5bb54d1999d9849714d2"
+    },
+    {
+      "upstream_path": "skills/codex-ppt/scripts/image_providers/openai_compatible.py",
+      "path": "scripts/image_providers/openai_compatible.py",
+      "upstream_git_blob_sha": "2184a79074af94d9217bba9064ec175b51160812",
+      "modified": true,
+      "sha256": "9ca5521c91cdd8b904ad43ee596738c95574d30e7f94bb66b6811e9ed5dccb2d"
+    },
+    {
+      "upstream_path": "skills/codex-ppt/scripts/record_slide_blocker.py",
+      "path": "scripts/record_slide_blocker.py",
+      "upstream_git_blob_sha": "c5098f752976eb57553d49e9bdff5a95bb6f3677",
+      "modified": false,
+      "sha256": "92be04beb2a690ec6c19dea48a9674d2daea3ceabe2de9e64b181361d0dbde9c"
+    },
+    {
+      "upstream_path": "skills/codex-ppt/scripts/record_slide_dispatch.py",
+      "path": "scripts/record_slide_dispatch.py",
+      "upstream_git_blob_sha": "4dd529e8f63450b00ca48e9e843afa4c72236bd2",
+      "modified": false,
+      "sha256": "f5ce8806a0aecf24ea3b7c657c8d20507d83b6fd21a81da86d8f6f9da623ed54"
+    },
+    {
+      "upstream_path": "skills/codex-ppt/scripts/record_slide_result.py",
+      "path": "scripts/record_slide_result.py",
+      "upstream_git_blob_sha": "e0d8d622f3199cacc41d9fcc6b1fe4878c742166",
+      "modified": false,
+      "sha256": "ae14297acf87991ef0cb4af41bd0a591665f288d25ff5d6f0b9b264e5a59bac1"
+    },
+    {
+      "upstream_path": "skills/codex-ppt/scripts/slide_job_status.py",
+      "path": "scripts/slide_job_status.py",
+      "upstream_git_blob_sha": "09ee4104178e18c9e9d6f190539c4cbbf882cd81",
+      "modified": false,
+      "sha256": "15c90c28b5733275990b162e36c32dd7940465ec7c6522f49aaa8a42c5dbd293"
+    },
+    {
+      "upstream_path": "skills/codex-ppt/scripts/slide_run_state.py",
+      "path": "scripts/slide_run_state.py",
+      "upstream_git_blob_sha": "dc1f5d21573f34bf922aa99a63f165f8eed30924",
+      "modified": false,
+      "sha256": "b7534c3aec858a5ec4210e5af80693c899dbbe670083093ec1c055d471ba5e42"
+    }
+  ]
+}

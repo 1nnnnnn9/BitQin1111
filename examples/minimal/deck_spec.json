@@ -1,0 +1,195 @@
+{
+  "title": "从想法到演示：可编辑演示文稿示例",
+  "canvas": {
+    "width": 1280,
+    "height": 720
+  },
+  "font": "Microsoft YaHei",
+  "style": {
+    "name": "清爽专业风",
+    "palette": [
+      "#FFFFFF",
+      "#133C52",
+      "#20A9A0"
+    ],
+    "art": "Minimal white, navy and teal editorial teaching illustration, subtle depth, no typography"
+  },
+  "backend": "built-in image tool",
+  "sample_slide": 1,
+  "background_generation_method": {
+    "backend": "built-in image tool",
+    "tool_name": "image_gen",
+    "mode": "generate",
+    "purpose": "Generic public maintainer demonstration; not a customer deck"
+  },
+  "assets": [],
+  "slides": [
+    {
+      "number": 1,
+      "scene_brief": "An elegant small isometric arrangement on the right: stacked translucent sheets and one smooth teal sphere suggesting an idea becoming a presentation. Art only in x=780..1210, y=220..530. White background and generous negative space. The rest is empty; no letters on sheets.",
+      "background": "origin_image/slide_01.png",
+      "texts": [
+        {
+          "name": "标题",
+          "text": "从想法到演示",
+          "box": [
+            70,
+            95,
+            1050,
+            90
+          ],
+          "font_size": 62,
+          "bold": true,
+          "color": "#133C52"
+        },
+        {
+          "name": "正文",
+          "text": "背景由图像模型绘制\n文字在 PowerPoint 中直接修改",
+          "box": [
+            75,
+            265,
+            600,
+            150
+          ],
+          "font_size": 32,
+          "color": "#133C52",
+          "line_spacing": 1.5
+        },
+        {
+          "name": "标签",
+          "text": "无字底图 ＋ 原生文字",
+          "box": [
+            755,
+            575,
+            455,
+            60
+          ],
+          "font_size": 25,
+          "color": "#128D87",
+          "align": "center"
+        }
+      ],
+      "notes": "这是一个通用示例。右侧的装饰图来自图片生成工具，标题、正文与下方标签均为原生文字。可以选择任意文字框修改内容；整页不是一张含字截图。",
+      "sources": []
+    },
+    {
+      "number": 2,
+      "scene_brief": "Right side only x=770..1210,y=220..520: three small abstract objects arranged horizontally, an empty folder, a polished teal cube, a stack of blank sheets, linked with thin teal flow arrows. No icon letters or text. Keep all left and top areas pure white.",
+      "background": "origin_image/slide_02.png",
+      "texts": [
+        {
+          "name": "标题",
+          "text": "先明确输入，再开始制作",
+          "box": [
+            70,
+            75,
+            1120,
+            85
+          ],
+          "font_size": 48,
+          "bold": true,
+          "color": "#133C52"
+        },
+        {
+          "name": "正文",
+          "text": "先确认模板与视觉风格\n再收集图片、图表与数据\n确认大纲后，交付可编辑样页",
+          "box": [
+            75,
+            245,
+            620,
+            230
+          ],
+          "font_size": 30,
+          "line_spacing": 1.65
+        },
+        {
+          "name": "标签",
+          "text": "素材 → 视觉 → 演示",
+          "box": [
+            755,
+            575,
+            455,
+            60
+          ],
+          "font_size": 25,
+          "color": "#128D87",
+          "align": "center"
+        }
+      ],
+      "notes": "制作前先确认是否有模板。有模板就查看视觉风格，无模板就选择风格。然后清点素材，安排大纲，先做一页含真实可编辑文字的样页。样页确认后再完成其余页面。",
+      "sources": []
+    },
+    {
+      "number": 3,
+      "scene_brief": "Right side only x=880..1190,y=240..500: a restrained translucent teal magnifying lens hovering above blank stacked cards; abstract decorative quality inspection metaphor, no ticks shaped as letters, no writing. Pure white left for a table and top for a title.",
+      "background": "origin_image/slide_03.png",
+      "texts": [
+        {
+          "name": "标题",
+          "text": "交付前，检查内容与可编辑性",
+          "box": [
+            70,
+            75,
+            1120,
+            85
+          ],
+          "font_size": 46,
+          "bold": true,
+          "color": "#133C52"
+        },
+        {
+          "name": "标签",
+          "text": "结构检查 ＋ 逐页看图",
+          "box": [
+            835,
+            575,
+            385,
+            60
+          ],
+          "font_size": 24,
+          "color": "#128D87",
+          "align": "center"
+        }
+      ],
+      "tables": [
+        {
+          "name": "可编辑检查表",
+          "box": [
+            75,
+            245,
+            700,
+            300
+          ],
+          "font_size": 26,
+          "header_rows": 1,
+          "column_widths": [
+            1,
+            2.25
+          ],
+          "data": [
+            [
+              "对象",
+              "检查内容"
+            ],
+            [
+              "原生文字",
+              "可以选中、修改与重新排版"
+            ],
+            [
+              "用户原图",
+              "保留内容、比例与来源"
+            ],
+            [
+              "演讲备注",
+              "逐页对应，便于讲解"
+            ]
+          ]
+        }
+      ],
+      "notes": "这一页展示原生表格。表格单元格可直接修改。交付前不仅检查对象类型，还要实际修改正文和标签，并重新渲染。示例不包含任何真实实验数据。",
+      "sources": [
+        "表格为本项目编写的通用演示内容。"
+      ]
+    }
+  ]
+}

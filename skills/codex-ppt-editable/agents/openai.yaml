@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex PPT Editable"
+  short_description: "先问模板与素材，生成无字底图，再加入原生可编辑文字的独立 PPT 技能"
+  default_prompt: "使用 $codex-ppt-editable 先确认模板和素材，再制作背景配图与可编辑文字分层的 PPT。"
