@@ -69,6 +69,12 @@ def main():
     a=p.parse_args();result=validate(a.spec,a.pptx,a.slides)
     if a.final:
         _,spec=load_spec(a.spec)
+        intake_path=Path(a.spec).resolve().parent/"intake.json"
+        if intake_path.is_file():
+            from common import read_json
+            from visual_checkpoints import assert_final_approved
+            try:assert_final_approved(spec,read_json(intake_path))
+            except ValueError as exc:result["errors"].append(str(exc));result["ok"]=False
         if spec.get("schema_version",1)>=2:
             if a.slides:result["errors"].append("Final validation must cover the whole deck")
             if not a.visual_review:result["errors"].append("Final v2 validation needs --visual-review")

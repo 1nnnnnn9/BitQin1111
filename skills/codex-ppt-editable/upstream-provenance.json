@@ -141,22 +141,22 @@
       "upstream_path": "skills/codex-ppt/scripts/record_slide_dispatch.py",
       "path": "scripts/record_slide_dispatch.py",
       "upstream_git_blob_sha": "4dd529e8f63450b00ca48e9e843afa4c72236bd2",
-      "modified": false,
-      "sha256": "f5ce8806a0aecf24ea3b7c657c8d20507d83b6fd21a81da86d8f6f9da623ed54"
+      "modified": true,
+      "sha256": "f0e2c2949f6027b510cd4e400f81f1eeeb5bb6c284dbb3083e90ab5067ec075f"
     },
     {
       "upstream_path": "skills/codex-ppt/scripts/record_slide_result.py",
       "path": "scripts/record_slide_result.py",
       "upstream_git_blob_sha": "e0d8d622f3199cacc41d9fcc6b1fe4878c742166",
-      "modified": false,
-      "sha256": "ae14297acf87991ef0cb4af41bd0a591665f288d25ff5d6f0b9b264e5a59bac1"
+      "modified": true,
+      "sha256": "fe510e0b1a83d70579506bc5d5208124e95a8b8414c5708aa676bc55f022959f"
     },
     {
       "upstream_path": "skills/codex-ppt/scripts/slide_job_status.py",
       "path": "scripts/slide_job_status.py",
       "upstream_git_blob_sha": "09ee4104178e18c9e9d6f190539c4cbbf882cd81",
-      "modified": false,
-      "sha256": "15c90c28b5733275990b162e36c32dd7940465ec7c6522f49aaa8a42c5dbd293"
+      "modified": true,
+      "sha256": "ce4e99a78929c59eb7a2bcc11d6f365106835c89087e98824211a7e58ec76bc8"
     },
     {
       "upstream_path": "skills/codex-ppt/scripts/slide_run_state.py",

@@ -1,5 +1,6 @@
 """Validate explanatory intent before allocating text-free generated art. MIT."""
 from common import check_box
+from diagram_style import engineering_contract
 
 MODES={
     "schematic":"Prefer flat schematic drawing: orthographic or top-down views, crisp outlines, limited fills. Avoid photorealism, 3D perspective, material textures and ornamental shadows.",
@@ -76,6 +77,7 @@ def validate_plans(spec):
                 raise ValueError(f"{tag}: describe the actual relationship, either in nodes/relations or relationship_brief")
         if form=="data_chart" and (not plan.get("data") or not plan.get("data_source")):
             raise ValueError(f"{tag}: data chart needs explicit values and data_source")
+        engineering_contract(spec,slide)
 
 def prompt_plan(plan):
     """Exclude native label strings/names. Opaque IDs specify geometry, never typography."""

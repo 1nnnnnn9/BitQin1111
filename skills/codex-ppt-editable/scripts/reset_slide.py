@@ -8,6 +8,7 @@ from pathlib import Path
 from filelock import FileLock
 from common import read_json,write_json,resolve
 from intake import sample_numbers
+from visual_checkpoints import invalidate_representative
 from slide_run_state import locked_jobs,find_slide,update_jobs_run_status
 
 def reset(project,number,reason):
@@ -29,9 +30,10 @@ def reset(project,number,reason):
             sample=intake.get("sample") or {}
             spec=read_json(root/"deck_spec.json")
             samples=sample.get("slides") or sample_numbers(spec)
+            invalidate_representative(intake,slide["number"])
             if slide["number"] in samples:
                 intake["sample"]=None;intake["approvals"]["sample"]=False
-                write_json(root/"intake.json",intake)
+            write_json(root/"intake.json",intake)
     return {"slide":number,"status":"pending","archived":str(folder)}
 
 def main():

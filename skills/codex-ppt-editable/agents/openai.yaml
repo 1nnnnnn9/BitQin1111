@@ -1,4 +1,4 @@
 interface:
   display_name: "Codex PPT Editable"
-  short_description: "确认模板、素材与配图偏好，先交付双样页，再制作可编辑文字 PPT"
-  default_prompt: "使用 $codex-ppt-editable 确认模板、素材与配图偏好，规划逐页图解，先交付两张可编辑样页，再完成全稿并检查中后段视觉质量。"
+  short_description: "先确认模板、素材与配图，双样页后遇到新视觉部分再确认，制作可编辑 PPT"
+  default_prompt: "使用 $codex-ppt-editable 制作可编辑文字 PPT；先确认模板、素材与配图偏好，双样页之后遇到新视觉类型或明显版式变化，先交代表页让我确认，不满意时给2–3个调整方向。"

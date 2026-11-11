@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+from visual_checkpoints import assert_generation_allowed
 
 from slide_run_state import (
     deck_dir_from_target,
@@ -31,6 +32,8 @@ def main() -> int:
     deck_dir = deck_dir_from_target(args.deck)
     with locked_jobs(deck_dir) as jobs:
         slide = find_slide(jobs, args.slide)
+        try:assert_generation_allowed(deck_dir,slide["number"])
+        except ValueError as exc:raise SystemExit(str(exc)) from exc
         if slide.get("status") != "pending":
             raise SystemExit(f"{slide['slide_id']} must be pending before dispatch; got {slide.get('status')}")
 

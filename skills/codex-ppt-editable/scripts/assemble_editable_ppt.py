@@ -13,6 +13,7 @@ from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from common import load_spec, resolve, check_box, check_assets, source_for_image, read_json, write_json
 from intake import require_ready, sample_only_selection, sample_numbers
 from visual_planning import validate_plans
+from visual_checkpoints import assert_selection
 
 def emu(px):
     return Inches(float(px)/96)
@@ -104,6 +105,7 @@ def build(spec_path, output, numbers=None, force=False):
     path,spec=load_spec(spec_path);root=path.parent
     slides=selected_slides(spec,numbers)
     state=require_ready(root,full=not sample_only_selection(spec,numbers))
+    assert_selection(spec,state,numbers)
     if state.get("version",1)>=2:
         if spec.get("schema_version",1)<2:raise ValueError("New projects require schema_version 2")
         if spec.get("visual_preference")!=state["answers"].get("visual_preference"):

@@ -8,6 +8,7 @@ import json
 import re
 import shutil
 from pathlib import Path
+from visual_checkpoints import assert_generation_allowed
 
 from slide_run_state import (
     deck_dir_from_target,
@@ -134,6 +135,8 @@ def main() -> int:
     deck_dir = deck_dir_from_target(args.deck)
     with locked_jobs(deck_dir) as jobs:
         slide = find_slide(jobs, args.slide)
+        try:assert_generation_allowed(deck_dir,slide["number"])
+        except ValueError as exc:raise SystemExit(str(exc)) from exc
         if slide.get("status") != "dispatched":
             raise SystemExit(f"{slide['slide_id']} must be dispatched before result recording; got {slide.get('status')}")
         dispatch = slide.get("dispatch") or {}

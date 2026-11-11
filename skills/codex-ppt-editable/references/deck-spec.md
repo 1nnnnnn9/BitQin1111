@@ -43,12 +43,15 @@ deck_spec.json 使用 UTF-8，相对路径相对于该文件；所有几何和 f
 - source_asset_ids：本页实际采用的文字／文档资料的 assets.id 数组，记录正文或讲稿依据；不能为了通过检查而登记未采用的材料。图片和表格继续用其 asset_id 追踪。
 - 可选background_generation_method：记录样页后端、工具、模式、提示词和实际输出；prepare脚本会携带到任务，原始资产不经过模型重画。
 - style.reference：可选的内置风格名称，例如“教学课件风”。脚本读取随包风格文档的构图、配色、图解与视觉层次规范；style.name 恰好匹配内置名称时也自动读取。模板或自定义风格可在 style 中记录提取的完整视觉设计说明。除新增文字留白外，应保持原 codex-ppt 的视觉完整度。
+- diagram_style：可选 engineering_wireframe；页面 visual_plan.diagram_style 可单独指定。该框图处理只影响相应图解；highlight_nodes 指定少量重点节点，groups 指定有真实含义的组框。字段与布局规则见 engineering-flowcharts.md；未指定时维持既有生成方式与来源。
 
 背景文件必须存在并有真实的任务来源记录；测试夹具不作为生产图片来源。样页可单独导出；最终发布前用户应已确认样页。
 
 ## v2 视觉规划与双样页
 
 新项目必填 schema_version=2、visual_preference（与 intake 一致）、sample_slides。两页以上任务选择两个不同的样页编号，按 slides 数组顺序排列；上面单页示例只有一个编号。旧版 sample_slide 标量保留兼容。
+
+每页可记录 section 章节名称。visual_plan.visual_variant 记录同类型中的明显版式差异，例如 summary-table 与 dense-comparison；数据图可填写 chart_type。默认分段确认会识别真实表格／图片组合、流程拓扑及部分表格结构变化，执行代理仍须标记未被自动识别的视觉差异。新类型／变式的代表页批准后才继续，见 visual-checkpoints.md。
 
 每页 visual_plan 必填 purpose、form、explanation。purpose 可为 overview、process、spatial、workstation、system、comparison、data、detail、conclusion、reference；form 可为 flowchart、block_layout、workstation、systems、diagram、data_chart、source_figure、illustration、table、text。
 

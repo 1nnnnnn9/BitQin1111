@@ -15,6 +15,8 @@
 - image_gen.py 与 image_providers/：保留 API 备用提供者实现；image_gen.py 和 openai_compatible.py 改为独立缓存变量、独立依赖引导及有效的本项目配置文档。继承的默认模型标识不保证任一服务支持；备用模式须显式选择实际可用模型。
 - record_slide_dispatch.py、record_slide_result.py、record_slide_blocker.py、slide_job_status.py、slide_run_state.py：保留逐页派发、结果哈希及状态记录机制。
 
+其中 record_slide_dispatch.py、record_slide_result.py 和 slide_job_status.py 在本项目中增加分段视觉确认检查；原始来源与版权保留，修改标记和文件摘要见 upstream-provenance.json。新增 visual_checkpoints.py 负责本项目的代表页确认与风格锚点，不属于上游原始实现。
+
 没有打包上游的整页图片组装器、旧运行时安装目录、私有凭证、字体或本机专用二进制。新增的模板/素材访谈、留白任务、原生 PPTX 组装、验证、预览适配、测试及文档由本项目编写。文件级来源与版本见技能内 upstream-provenance.json。
 
 ## Python 依赖

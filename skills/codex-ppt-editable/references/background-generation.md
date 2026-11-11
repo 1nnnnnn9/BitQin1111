@@ -21,7 +21,7 @@
 
 先由 intake.py 完成模板/风格/素材/配图偏好/大纲确认；新项目读取 visual-planning.md 并填写逐页 visual_plan。样页前仅运行 prepare_background_jobs.py --sample-only 2 8（编号等于声明的 sample_slides）。样页实际生成后记录派发和结果，用 assemble_editable_ppt.py --slides 2 8 组装双样页，渲染后请用户一次确认。单页任务仅传一个编号。
 
-用户确认后记录样页并运行 prepare_background_jobs.py 生成剩余任务。示例：
+用户确认后记录样页。新项目再由 intake.py next 判断当前已批准部分及下一视觉检查点；prepare_background_jobs.py 仅准备当前获准部分。首次新类型／明显变式使用 --checkpoint-only N，只生成并交付该代表页，确认前不批量生成后续。旧 v2 项目先启用检查点；细节见 visual-checkpoints.md。示例：
 ```
 python scripts/record_slide_dispatch.py PROJECT --slide slide_02 --agent-id ACTUAL_ID --prompt-file prompts/slide_02.json
 python scripts/record_slide_result.py PROJECT --slide slide_02 --agent-id ACTUAL_ID --backend-used "built-in image tool" --selected-source ORIGINAL_GENERATED.png --qa-note "实际检查结论"

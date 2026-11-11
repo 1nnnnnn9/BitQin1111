@@ -3,13 +3,14 @@
 from __future__ import annotations
 import argparse
 from pathlib import Path
-from common import read_json,write_json,resolve
+from common import read_json,write_json,resolve,load_spec
 from filelock import FileLock
 
 VISUAL_MODES={"schematic","realistic","mixed"}
 ANSWER_KEYS={"template","style","materials","visual_preference","topic","audience","slide_count","minutes","backend"}
 def new_state():
-    return {"version":2,"answers":{},"approvals":{"outline":False,"sample":False},"sample":None}
+    return {"version":2,"answers":{},"approvals":{"outline":False,"sample":False},"sample":None,
+            "visual_checkpoints":{"enabled":True,"approvals":{},"drafts":{}}}
 
 def sample_numbers(spec):
     """Read v2 sample sets while keeping the v1 scalar contract."""
@@ -33,7 +34,7 @@ def load(project):
     p=Path(project)/"intake.json"
     return read_json(p) if p.exists() else new_state()
 
-def next_action(state):
+def next_action(state,project=None):
     a=state["answers"];t=a.get("template")
     if t is None:return {"action":"ask_template","question":"你是否有希望参考的PPT模板？"}
     if t=="none":
@@ -54,6 +55,11 @@ def next_action(state):
     if not isinstance(b,dict) or not b.get("name") or not b.get("confirmed"):return {"action":"confirm_backend"}
     if not state.get("sample"):return {"action":"create_sample","count":min(2,a.get("slide_count") or 2) if state.get("version",1)>=2 else 1}
     if not state["approvals"].get("sample"):return {"action":"review_sample","artifacts":state["sample"]}
+    from visual_checkpoints import enabled,next_visual_action
+    if enabled(state):
+        if project is None:return {"action":"continue_visual_checkpoints","instruction":"Check the next unapproved visual family before generating later pages"}
+        _,spec=load_spec(Path(project)/"deck_spec.json")
+        return next_visual_action(spec,state)
     return {"action":"generate_full_deck"}
 
 def require_ready(project,full=False):
@@ -96,10 +102,13 @@ def main():
             elif "backend" in changed:
                 state["approvals"]["sample"]=False;state["sample"]=None
             state["answers"].update(answers)
+            if changed:
+                from visual_checkpoints import clear_decisions
+                clear_decisions(state)
         elif args.command=="approve":
             if args.stage=="outline":
                 state["approvals"]["outline"]=False
-                if next_action(state)["action"]!="review_outline":raise ValueError("Template/style/materials/visual preference/topic must precede outline")
+                if next_action(state,r)["action"]!="review_outline":raise ValueError("Template/style/materials/visual preference/topic must precede outline")
                 if not args.artifact or not resolve(r,args.artifact).is_file():raise ValueError("Outline artifact missing")
                 state["approvals"]["outline"]=True
                 state["outline_artifact"]=str(resolve(r,args.artifact))
@@ -107,6 +116,9 @@ def main():
                 require_ready(r)
                 if not state.get("sample"):raise ValueError("Register editable PPTX and preview before approval")
                 state["approvals"]["sample"]=True
+                from visual_checkpoints import seed_samples
+                _,spec=load_spec(r/"deck_spec.json")
+                seed_samples(r,spec,state)
         elif args.command=="sample":
             require_ready(r)
             paths={"pptx":str(resolve(r,args.pptx)),"previews":[str(resolve(r,v)) for v in args.preview]}
@@ -117,7 +129,6 @@ def main():
             try:
                 deck=Presentation(paths["pptx"])
                 if state.get("version",1)>=2:
-                    from common import load_spec
                     _,spec=load_spec(r/"deck_spec.json")
                     expected=sample_numbers(spec)
                     if args.slides!=expected:raise ValueError("--slides must match sample_slides order in deck_spec.json")
@@ -140,9 +151,11 @@ def main():
             except Exception as exc:
                 raise ValueError(f"Invalid editable sample or preview: {exc}") from exc
             state["sample"]=paths;state["approvals"]["sample"]=False
+            from visual_checkpoints import clear_decisions
+            clear_decisions(state)
         if args.command!="next" or not (r/"intake.json").exists():write_json(r/"intake.json",state)
         import json
-        print(json.dumps(next_action(state),ensure_ascii=False,indent=2))
+        print(json.dumps(next_action(state,r),ensure_ascii=False,indent=2))
     return 0
 if __name__=="__main__":
     try:raise SystemExit(main())

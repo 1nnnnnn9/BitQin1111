@@ -18,7 +18,7 @@
 4. `python SKILL/scripts/prepare_background_jobs.py --spec PROJECT/deck_spec.json --sample-only 1 2`。
 5. 按任务调用内置图片工具，每页通过 record_slide_dispatch.py 与 record_slide_result.py 记录实际生成来源。查看图形后校准原生标签位置；不要伪造来源或以代码绘图替代。
 6. `python SKILL/scripts/assemble_editable_ppt.py --spec PROJECT/deck_spec.json --output PROJECT/sample.pptx --slides 1 2`。渲染并检查两页，向用户同时提供 PPTX 和各页预览。
-7. `python SKILL/scripts/intake.py sample --project PROJECT --pptx sample.pptx --slides 1 2 --preview previews/slide-01.png previews/slide-02.png`。只有用户确认后才运行 `approve --stage sample`，再准备和生成其余页。
+7. `python SKILL/scripts/intake.py sample --project PROJECT --pptx sample.pptx --slides 1 2 --preview previews/slide-01.png previews/slide-02.png`。只有用户确认后才运行 `approve --stage sample`。本例两页的类型均已展示；更长的全稿还要按 intake next 的 approved_prefix 分段继续，首次新类型或明显版式变化先交代表页确认，不能把双样页批准当作全稿批准。
 8. 组装全稿并渲染。`review_deck.py prepare` 生成缩略图和待填写记录；实际看图填写后，运行 `validate_pptx.py --final --visual-review visual_review.json`。完整参数见技能 references/quality-and-rendering.md。
 
 已知答案示例（仅在会话已确认后记录）：

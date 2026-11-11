@@ -22,7 +22,8 @@ from review_deck import prepare_review,check_review,CHECKS
 from reset_slide import reset
 
 def state(approved=False):
-    s=new_state();s["answers"]={"template":"none","style":"teaching","materials":[],"visual_preference":"schematic",
+    s=new_state();s["visual_checkpoints"]["enabled"]=False  # Prior v2 projects remain compatible; checkpoints have separate integration tests.
+    s["answers"]={"template":"none","style":"teaching","materials":[],"visual_preference":"schematic",
         "topic":"test","audience":"class","slide_count":3,"backend":{"name":"built-in image tool","confirmed":True}}
     s["approvals"]={"outline":True,"sample":approved}
     if approved:s["sample"]={"slides":[1,3],"pptx":"sample.pptx","previews":["1.png","3.png"]}

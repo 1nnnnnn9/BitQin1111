@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 from collections import Counter, defaultdict
+from visual_checkpoints import assert_generation_allowed
 
 from slide_run_state import (
     active_slides,
@@ -31,6 +32,10 @@ def main() -> int:
     by_status = defaultdict(list)
     for slide in jobs.get("slides", []):
         by_status[slide.get("status", "unknown")].append(slide.get("slide_id"))
+    dispatchable=[];visual_blocked=[]
+    for slide in dispatchable_slides(jobs):
+        try:assert_generation_allowed(deck_dir,slide["number"]);dispatchable.append(slide)
+        except ValueError as exc:visual_blocked.append({"slide":slide["slide_id"],"reason":str(exc)})
     summary = {
         "deck_dir": str(deck_dir),
         "run_status": state.get("status"),
@@ -39,7 +44,8 @@ def main() -> int:
         "max_concurrent_slides": max_concurrent_slides(jobs),
         "active_dispatches": slide_ids(active_slides(jobs)),
         "dispatch_slots_available": dispatch_slots_available(jobs),
-        "dispatchable_slides": slide_ids(dispatchable_slides(jobs)),
+        "dispatchable_slides": slide_ids(dispatchable),
+        "visual_checkpoint_blocked":visual_blocked,
         "counts": dict(Counter(slide.get("status", "unknown") for slide in jobs.get("slides", []))),
         "slides": dict(sorted(by_status.items())),
     }

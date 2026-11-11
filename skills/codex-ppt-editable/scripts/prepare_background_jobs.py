@@ -9,11 +9,14 @@ from common import load_spec, check_box
 from intake import require_ready, sample_numbers
 from visual_planning import validate_plans, MODES, prompt_plan
 from style_contract import visual_style
+from diagram_style import engineering_contract
+from visual_checkpoints import enabled, generation_selection, anchor_images, visual_key
 from slide_run_state import read_json, write_json, now_iso, update_jobs_run_status
 
-def prepare(spec_path, sample_only=None):
+def prepare(spec_path, sample_only=None, checkpoint_only=None):
     path, spec = load_spec(spec_path)
     root = path.parent
+    if sample_only is not None and checkpoint_only is not None:raise ValueError("Use either --sample-only or --checkpoint-only")
     state = require_ready(root, full=sample_only is None)
     modern=state.get("version",1)>=2
     if modern and spec.get("schema_version",1)<2:
@@ -31,6 +34,10 @@ def prepare(spec_path, sample_only=None):
     selection=[sample_only] if isinstance(sample_only,int) else sample_only
     if selection is not None and (not selection or len(set(selection))!=len(selection) or not set(selection)<=set(samples)):
         raise ValueError("Before sample approval only declared sample_slides may be prepared")
+    if state["approvals"].get("sample") and modern and (state.get("sample") or {}).get("slides")!=samples:
+        raise ValueError("Declared initial samples differ from the approved sample set")
+    if sample_only is None and enabled(state):selection=generation_selection(spec,state,checkpoint_only)
+    elif checkpoint_only is not None:raise ValueError("Enable visual checkpoints before --checkpoint-only")
     selected = [s for s in spec["slides"] if selection is None or s["number"] in selection]
     if not selected:
         raise ValueError("Sample slide does not exist")
@@ -47,6 +54,7 @@ def prepare(spec_path, sample_only=None):
                     box = check_box(obj["box"], canvas, f"{sid}/{kind}/{i}")
                     zones.append({"box":box,"purpose":kind,"object":obj.get("name",f"{kind}_{i+1}")})
             visual_instructions=""
+            diagram_contract=engineering_contract(spec,slide) if spec.get("schema_version",1)>=2 else None
             if spec.get("schema_version",1)>=2:
                 visual_instructions=(
                     "\nDesign this as a complete polished codex-ppt slide, with the selected style's composition, meaningful diagrams, layered visual hierarchy and balanced image treatment. "
@@ -60,6 +68,9 @@ def prepare(spec_path, sample_only=None):
                     "Do not replace a process/layout/system diagram with an ornamental machine portrait or an empty master. "
                     "If this is a data chart, reproduce the supplied marks and proportions exactly, leaving all typography for native labels."
                 )
+                if diagram_contract:
+                    visual_instructions+=("\nDiagram treatment (takes precedence over conflicting visual embellishment in the diagram field): "
+                        +json.dumps(diagram_contract,ensure_ascii=False))
             prompt = (
                 "Create a professional slide BACKGROUND AND NON-TEXT ILLUSTRATION ONLY. "
                 f"Landscape canvas aspect {canvas['width']}:{canvas['height']}. "
@@ -76,7 +87,19 @@ def prepare(spec_path, sample_only=None):
             )
             if spec.get("schema_version",1)>=2 and slide["visual_plan"]["form"]=="data_chart":
                 prompt=prompt.replace("legends or axes.","legend text or axis text.")
-            inputs = slide.get("style_reference_images", [])
+            inputs = list(slide.get("style_reference_images", []))
+            existing=old.get(n)
+            stored_job={}
+            if enabled(state) and existing and existing.get("status")!="pending":
+                stored_job=read_json(root/existing.get("job",f"prompts/{sid}.json"))
+            anchors=(anchor_images(spec,state,slide) if not existing or existing.get("status")=="pending"
+                     else stored_job.get("visual_checkpoint",{}).get("anchor_images",[]))
+            for anchor in anchors:
+                if anchor not in inputs:inputs.append(anchor)
+            if anchors:
+                prompt+=("\nAn approved completed page is supplied as a visual anchor. Preserve its overall palette, title hierarchy, linework and visual language while adapting this page's structure. "
+                    "Do not copy its words, figures, data or table cells; all new typography/tables are assembled natively. "
+                    "A new visual family or a markedly different layout still requires a human checkpoint, even when the palette is the same.")
             for inp in inputs:
                 if not (root/inp).is_file():
                     raise FileNotFoundError(f"Missing style reference: {inp}")
@@ -87,6 +110,11 @@ def prepare(spec_path, sample_only=None):
                 "sample_generation_method":spec.get("background_generation_method",{}),
                 "background_contract":{"text_free":True,"reserved_zones":zones},
             }
+            if diagram_contract:job["diagram_contract"]=diagram_contract
+            if enabled(state) and (not existing or existing.get("status")=="pending"):
+                job["visual_checkpoint"]={"visual_key":visual_key(slide),"anchor_images":anchors,
+                    "representative":checkpoint_only==n}
+            elif "visual_checkpoint" in stored_job:job["visual_checkpoint"]=stored_job["visual_checkpoint"]
             out = (root/job["out"]).resolve()
             out.relative_to(root)
             job_ref = f"prompts/{sid}.json"
@@ -137,7 +165,8 @@ def prepare(spec_path, sample_only=None):
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("--spec",required=True);p.add_argument("--sample-only",type=int,nargs="+")
-    a=p.parse_args();j=prepare(a.spec,a.sample_only)
+    p.add_argument("--checkpoint-only",type=int)
+    a=p.parse_args();j=prepare(a.spec,a.sample_only,a.checkpoint_only)
     print(json.dumps({"jobs":len(j["slides"]),"status":j["run_status"]},ensure_ascii=False))
 if __name__=="__main__":
     try:main()

@@ -38,4 +38,6 @@ python scripts/intake.py approve --project PROJECT --stage sample
 
 --slides 顺序必须等于 deck_spec.json 的 sample_slides，并按规格的页面顺序排列；预览按相同顺序对应。两页一起通过后记录一次 sample 确认。新注册样稿会撤销先前样稿批准。
 
+新项目默认带 visual_checkpoints 状态。sample 确认只为其实际展示的视觉类型／版式建立批准，不再返回无条件 generate_full_deck。后续 next 给出 approved_prefix 与下一个代表页；首次新类型或明显变式先单页交付确认，不满意时提供2–3个方向再修订。命令与行为见 visual-checkpoints.md。
+
 旧 version=1 状态及其单页 sample_slide、preview 接口继续可读，已批准样稿与生成来源不被清除。继续旧项目时不自动补造配图答案；新增或重做页面前询问偏好，补齐视觉规划。需要完整升级时在保留旧项目副本后建立 v2 项目，不盲目修改旧来源记录。
