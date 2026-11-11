@@ -1,0 +1,26 @@
+{
+  "backend": "built-in image tool",
+  "tool": "image_gen",
+  "model": "built-in default",
+  "scope": "Maintainer-authored generic example; not client approval",
+  "slides": [
+    {
+      "number": 1,
+      "prompt": "prompts/slide_01.json",
+      "background": "origin_image/slide_01.png",
+      "sha256": "5ceef28019ca8848ae4e8ed553fa9dba1c23d8f54274001b978b81e0f4724057",
+      "tool_output_filename": "exec-5c2a4b7c-b660-4eb3-a7c1-8468727b881d.png",
+      "backend_used": "built-in image tool",
+      "qa_note": "沿用完整教学风绘图：三个实质性处理环节、流向、层次与背景统一，文字区无新增文字。"
+    },
+    {
+      "number": 2,
+      "prompt": "prompts/slide_02.json",
+      "background": "origin_image/slide_02.png",
+      "sha256": "a20c825f8828c17dab3151e83e9458b70b1941413c17c0778bf7746b5082c1a9",
+      "tool_output_filename": "exec-117b5766-3920-44d2-8e96-af00f83b1088.png",
+      "backend_used": "built-in image tool",
+      "qa_note": "完整运行示意，主体设施、监测与调度配图及反馈连接清楚；屏幕为概念图标，不是实测曲线。"
+    }
+  ]
+}

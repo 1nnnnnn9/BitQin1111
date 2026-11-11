@@ -1,0 +1,89 @@
+{
+  "slide": 2,
+  "slide_id": "slide_02",
+  "prompt": "Create a professional slide BACKGROUND AND NON-TEXT ILLUSTRATION ONLY. Landscape canvas aspect 1280:720. ABSOLUTELY NO TEXT: no titles, words, letters, numbers, labels, pseudo-writing, watermarks, signatures, legends or axes. Do not draw placeholder text or white cover-up boxes. The actual editable words and supplied original figures will be placed afterward in PowerPoint. Keep every reserved rectangle genuinely quiet and empty with a clean low-detail surface. Place all illustration outside those rectangles; do not invent experimental data. \nVisual style (ignore any legacy instruction to draw text): {\"name\": \"教学课件风\", \"reference\": \"教学课件风\", \"palette\": [\"#FFFFFF\", \"#0B2E6D\", \"#1769AA\", \"#137C83\"], \"codex_ppt_visual_guide\": {\"visual_direction\": \"clear and credible academic courseware with structured knowledge communication, evidence-supported explanation, discipline-appropriate visuals, and a professional classroom tone shaped by the lesson rather than a fixed technical template\", \"canvas\": {\"aspect_ratio\": \"16:9\", \"background\": \"white or very light cool gray with restrained pale-blue structural accents\", \"composition\": \"structured teaching slide with a clear title hierarchy and a content-driven combination of text, images, diagrams, charts, formulas, source material, annotations, or comparisons selected according to the lesson objective\", \"density\": \"balanced teaching density: substantial enough to support explanation, but never sparse, paragraph-heavy, or crowded; use strong grouping, alignment, and readable whitespace\"}, \"color_palette\": {\"primary\": \"deep academic navy #0B2E6D and clear blue #1769AA\", \"secondary\": \"light blue #EAF3FB and cool gray #F3F6F9\", \"accent\": \"choose a small set of restrained auxiliary colors according to the subject matter, source material, and semantic categories\", \"neutral\": \"ink black #1F2937, body gray #4B5563, border gray #D7E0EA\", \"rule\": \"use the blue system to establish the teaching structure; select auxiliary colors only when the content needs semantic distinction, then apply them consistently rather than decoratively\"}, \"layout_patterns\": [\"course cover combining a clear title hierarchy with subject-relevant visual material and concise course information\", \"concept explanation using the most suitable combination of diagrams, images, definitions, formulas, source excerpts, or annotated examples\", \"sequence, process, development, or causal explanation with a clear viewing order\", \"comparison or relationship page whose structure follows the concepts being contrasted or connected\", \"case, text, artwork, experiment, event, or application analysis supported by relevant evidence and explanation\", \"overview or synthesis page organizing examples, themes, findings, or knowledge relationships\", \"knowledge summary using a concise framework, conclusion, or takeaway\", \"closing or acknowledgement page combining a short closing statement with a restrained subject-relevant visual\"], \"layout_usage_rule\": \"Choose the layout that best supports the teaching objective and viewing sequence. Every slide should combine meaningful visual explanation with readable text; use one strong visual or several complementary photographs, diagrams, charts, maps, formulas, documents, artworks, screenshots, or annotated examples according to the discipline and content. Keep the visual language coherent without forcing every page into cards, equal columns, or one repeated composition.\", \"visual_elements\": {\"allowed\": \"discipline-relevant photographs, artworks, archival documents, source excerpts, maps, formulas, tables, charts, diagrams, screenshots, multi-image evidence groups, annotated images, timelines, relationship structures, restrained icons, and subtle academic background texture; cards and grids may be used when they genuinely clarify the material but are not the default\", \"avoid\": \"text-only pages, purely decorative illustration, repetitive card grids, default three-column layouts, generic AI-looking imagery, unsupported futuristic or technical styling, random 3D icons, playful stickers, excessive gradients, heavy shadows, glossy elements, inconsistent icon styles, dense ungrouped text, unrelated stock imagery, and ornamental layouts that weaken the teaching sequence\"}, \"image_treatment\": {\"photos\": \"use relevant and credible course or case images as evidence, crop them consistently, and pair them with concise explanatory labels; one page may use a single main image or several complementary images when they explain different aspects of the topic\", \"screenshots\": \"place inside clean frames and preserve important interface details, annotations, and labels\", \"charts\": \"use the palette semantically, retain accurate axes and values, and emphasize the comparison or trend being taught\", \"illustrations\": \"choose diagrams, maps, explanatory drawings, documentary collage, symbolic graphics, or other illustration treatments appropriate to the discipline and lesson; avoid decorative scenes that do not teach anything\", \"discipline_materials\": \"treat formulas, artworks, historical documents, literary excerpts, medical images, scientific figures, and other subject-specific materials as valid visual evidence when relevant and accurately represented\"}, \"title_system\": {\"consistency_rule\": \"Keep title typeface, weight, color logic, alignment, and spacing consistent across slides of the same page type.\", \"cover\": \"May combine a large course title with one or more subject-relevant visuals and concise presenter or course information; choose the visual structure according to the discipline and topic.\", \"section_divider\": \"May use a concise section title with stronger whitespace and a restrained academic cue.\", \"content_slide\": \"Keep the page topic immediately recognizable, but let title alignment, supporting accents, and surrounding composition adapt to the teaching content.\", \"closing\": \"Use a concise acknowledgement or closing statement together with a subject-relevant visual or summary echo; keep the page informative and visually complete rather than leaving a nearly empty text-only slide.\", \"flexibility\": \"Treat the title system as a consistency guide rather than a fixed template. Do not force every slide into the same header, rule, alignment, or decorative treatment.\"}, \"rendering_constraints\": [\"The slide must look like professional academic courseware, not a marketing pitch deck.\", \"Prioritize teaching sequence, conceptual clarity, and readable evidence over visual decoration.\", \"Every slide must contain both meaningful visual content and readable text; visuals should explain, demonstrate, compare, or provide evidence rather than merely decorate.\", \"Visual content may include photographs, diagrams, charts, maps, formulas, artworks, documents, source excerpts, screenshots, or other discipline-appropriate material; it does not always mean a decorative illustration.\", \"Avoid both underfilled slides and long blocks of prose. Convert dense explanations into diagrams, image groups, structured labels, or concise teaching points.\", \"Keep related information visibly grouped and maintain a clear viewing order.\", \"Avoid tiny text; split or simplify content when it cannot remain readable at presentation distance.\", \"Use semantic accent colors consistently across the deck.\", \"Do not force every slide into repeated cards, equal columns, a fixed module count, or an identical information grid.\", \"Avoid an obvious AI-generated look: no fabricated text inside images, implausible photo details, generic glowing technology effects, random decorative objects, or repetitive template-like compositions.\", \"Do not invent university, school, laboratory, company, or course logos; use only user-provided identity assets.\", \"Do not inherit topics, examples, imagery, terminology, or organizations from a style reference unless they are required by the source content.\", \"No watermark and no unrelated logo.\"]}}\nIllustration brief: Preserve the complete codex-ppt academic courseware visual quality: expressive subject-relevant educational diagram, clear layered composition, restrained blue/teal accents, meaningful supporting illustrations, coherent visual hierarchy. Reserve only the specified typography windows. Do not reduce the page to empty boxes or a bare white master. No text, numbers, labels, logo or watermark. Diagram geometry may be combined into the background.\nDesign this as a complete polished codex-ppt slide, with the selected style's composition, meaningful diagrams, layered visual hierarchy and balanced image treatment. Only the typography is deferred to native PowerPoint. Blank text areas must not turn the whole slide into a plain white master, sparse boxes, or a repeated grid. A reserved text rectangle is a low-detail typography surface, not a mandatory visible white box; preserve suitable colored panels, grouping, textures and subject-relevant visual structure around it. \nIllustration preference: Prefer flat schematic drawing: orthographic or top-down views, crisp outlines, limited fills. Avoid photorealism, 3D perspective, material textures and ornamental shadows.\nExplanatory visual plan: {\"purpose\": \"system\", \"form\": \"systems\", \"explanation\": \"Conceptual rainwater facility management architecture. Three upper blocks show operation, monitoring and dispatch; one feedback block below the center is connected bidirectionally. All rectangles are blank.\", \"relationship_brief\": \"Three upper stages run left to right: facility operation sends telemetry to monitoring, monitoring supports maintenance dispatch. A lower abnormality-feedback element connects bidirectionally with monitoring. Use meaningful flat equipment/monitoring/dispatch pictograms and an explicit feedback loop; do not use four empty identical boxes as the entire visual.\", \"box\": [64, 210, 1152, 380], \"nodes\": [], \"relations\": []}\nFollow relationship directions. Node boxes guide placement, not a requirement that every object be a generic rectangular module. IDs are instructions only: never print them. Draw node borders around quiet label interiors, not over reserved label rectangles. Use arrows when required by the plan. The plan takes precedence over a conflicting supplemental brief. Do not replace a process/layout/system diagram with an ornamental machine portrait or an empty master. If this is a data chart, reproduce the supplied marks and proportions exactly, leaving all typography for native labels.\nReserved rectangles in 96-DPI canvas coordinates: [{\"box\": [64, 42, 1152, 66], \"purpose\": \"texts\", \"object\": \"标题\"}, {\"box\": [64, 122, 1152, 65], \"purpose\": \"texts\", \"object\": \"正文\"}, {\"box\": [260, 625, 800, 40], \"purpose\": \"texts\", \"object\": \"结论\"}, {\"box\": [98, 261, 291, 81], \"purpose\": \"texts\", \"object\": \"图示标签_1\"}, {\"box\": [496, 261, 291, 81], \"purpose\": \"texts\", \"object\": \"图示标签_2\"}, {\"box\": [892, 261, 291, 81], \"purpose\": \"texts\", \"object\": \"图示标签_3\"}, {\"box\": [496, 459, 291, 81], \"purpose\": \"texts\", \"object\": \"图示标签_4\"}]",
+  "out": "origin_image/slide_02.png",
+  "input_images": [],
+  "expected_backend": "built-in image tool",
+  "sample_generation_method": {
+    "backend": "built-in image tool",
+    "tool_name": "image_gen",
+    "mode": "generate",
+    "purpose": "Maintainer validation, not client approval"
+  },
+  "background_contract": {
+    "text_free": true,
+    "reserved_zones": [
+      {
+        "box": [
+          64,
+          42,
+          1152,
+          66
+        ],
+        "purpose": "texts",
+        "object": "标题"
+      },
+      {
+        "box": [
+          64,
+          122,
+          1152,
+          65
+        ],
+        "purpose": "texts",
+        "object": "正文"
+      },
+      {
+        "box": [
+          260,
+          625,
+          800,
+          40
+        ],
+        "purpose": "texts",
+        "object": "结论"
+      },
+      {
+        "box": [
+          98,
+          261,
+          291,
+          81
+        ],
+        "purpose": "texts",
+        "object": "图示标签_1"
+      },
+      {
+        "box": [
+          496,
+          261,
+          291,
+          81
+        ],
+        "purpose": "texts",
+        "object": "图示标签_2"
+      },
+      {
+        "box": [
+          892,
+          261,
+          291,
+          81
+        ],
+        "purpose": "texts",
+        "object": "图示标签_3"
+      },
+      {
+        "box": [
+          496,
+          459,
+          291,
+          81
+        ],
+        "purpose": "texts",
+        "object": "图示标签_4"
+      }
+    ]
+  }
+}

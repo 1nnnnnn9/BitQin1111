@@ -11,7 +11,8 @@ from pptx.util import Inches, Pt
 from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from common import load_spec, resolve, check_box, check_assets, source_for_image, read_json, write_json
-from intake import require_ready
+from intake import require_ready, sample_only_selection, sample_numbers
+from visual_planning import validate_plans
 
 def emu(px):
     return Inches(float(px)/96)
@@ -102,7 +103,14 @@ def style_text(frame, obj, font):
 def build(spec_path, output, numbers=None, force=False):
     path,spec=load_spec(spec_path);root=path.parent
     slides=selected_slides(spec,numbers)
-    require_ready(root,full=numbers is None or len(slides)>1)
+    state=require_ready(root,full=not sample_only_selection(spec,numbers))
+    if state.get("version",1)>=2:
+        if spec.get("schema_version",1)<2:raise ValueError("New projects require schema_version 2")
+        if spec.get("visual_preference")!=state["answers"].get("visual_preference"):
+            raise ValueError("Spec visual preference differs from confirmed intake")
+        if numbers is None and (state.get("sample") or {}).get("slides")!=sample_numbers(spec):
+            raise ValueError("Approved sample set differs from deck sample_slides")
+    validate_plans(spec)
     assets=check_assets(spec)
     verify_backgrounds(root,slides,spec)
     output=Path(output).expanduser().resolve()

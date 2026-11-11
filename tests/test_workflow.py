@@ -23,6 +23,7 @@ from pptx import Presentation
 
 def ready(sample=False):
     s=new_state()
+    s["version"]=1  # Existing projects remain valid without inventing new answers.
     s["answers"]={"template":"none","style":"清爽专业风","materials":[],
                   "topic":"通用测试","audience":"课堂","slide_count":1,"backend":{"name":"built-in image tool","confirmed":True}}
     s["approvals"]={"outline":True,"sample":sample}
@@ -33,18 +34,19 @@ class IntakeTests(unittest.TestCase):
         s=new_state();self.assertEqual(next_action(s)["action"],"ask_template")
         s["answers"]["template"]="none";self.assertEqual(next_action(s)["action"],"choose_style")
         s["answers"]["style"]="清爽专业风";self.assertEqual(next_action(s)["action"],"ask_materials")
-        s["answers"]["materials"]=[];self.assertEqual(next_action(s)["action"],"clarify_brief")
+        s["answers"]["materials"]=[];self.assertEqual(next_action(s)["action"],"choose_visual_preference")
+        s["answers"]["visual_preference"]="mixed";self.assertEqual(next_action(s)["action"],"clarify_brief")
 
     def test_template_with_materials_inspection_first(self):
         s=new_state();s["answers"].update(template="template.pptx",materials=["figure.png"])
         self.assertEqual(next_action(s)["action"],"inspect_template")
         s["answers"]["style"]={"name":"提取风格","inspected":True}
-        self.assertEqual(next_action(s)["action"],"clarify_brief")
+        self.assertEqual(next_action(s)["action"],"choose_visual_preference")
 
     def test_template_no_materials(self):
         s=new_state();s["answers"].update(template="template.pdf",style={"inspected":True})
         self.assertEqual(next_action(s)["action"],"ask_materials")
-        s["answers"]["materials"]=[];self.assertEqual(next_action(s)["action"],"clarify_brief")
+        s["answers"]["materials"]=[];self.assertEqual(next_action(s)["action"],"choose_visual_preference")
 
     def test_no_template_with_materials_no_repeat(self):
         s=ready();s["answers"]["materials"]=["figure.png"]
@@ -146,15 +148,37 @@ class AssemblyTests(unittest.TestCase):
         self.assertNotIn("CONFIDENTIAL_TITLE_729",prompt);self.assertIn("ABSOLUTELY NO TEXT",prompt)
         with self.assertRaises(ValueError):prepare(self.root/"deck_spec.json")
 
+    def test_approved_sample_relayout_preserves_art_provenance(self):
+        self.spec["sample_slide"]=1
+        write_json(self.root/"deck_spec.json",self.spec)
+        write_json(self.root/"intake.json",ready())
+        (self.root/"slide_jobs.json").unlink()
+        jobs=prepare(self.root/"deck_spec.json",sample_only=1)
+        original_prompt=(self.root/"prompts/slide_01.json").read_bytes()
+        jobs["slides"][0]["status"]="recorded"
+        jobs["slides"][0]["result"]={"fixture":"synthetic unit-test provenance"}
+        write_json(self.root/"slide_jobs.json",jobs)
+        write_json(self.root/"intake.json",ready(True))
+        self.spec["slides"][0]["texts"][1]["box"][0]+=20
+        write_json(self.root/"deck_spec.json",self.spec)
+        expanded=prepare(self.root/"deck_spec.json")
+        self.assertEqual(expanded["slides"][0]["status"],"recorded")
+        self.assertEqual(expanded["slides"][0]["result"],jobs["slides"][0]["result"])
+        self.assertIn("accepted_sample_layout",expanded["slides"][0])
+        self.assertEqual((self.root/"prompts/slide_01.json").read_bytes(),original_prompt)
+        self.spec["slides"][0]["scene_brief"]="A different scientific diagram requiring new art"
+        write_json(self.root/"deck_spec.json",self.spec)
+        with self.assertRaises(ValueError):prepare(self.root/"deck_spec.json")
+
     def test_isolated_installation(self):
         isolated=self.root/"installed"/"codex-ppt-editable"
         shutil.copytree(SCRIPTS.parent,isolated,ignore=shutil.ignore_patterns("__pycache__"))
-        env=os.environ.copy();env["PYTHONPATH"]=str(isolated/"scripts")
+        env=os.environ.copy();env["PYTHONPATH"]=str(isolated/"scripts");env["PYTHONIOENCODING"]="utf-8"
         result=subprocess.run([sys.executable,str(isolated/"scripts"/"runtime.py"),"doctor"],
-            cwd=self.root,env=env,capture_output=True,text=True)
+            cwd=self.root,env=env,capture_output=True,text=True,encoding="utf-8")
         self.assertEqual(result.returncode,0,result.stderr)
         result=subprocess.run([sys.executable,str(isolated/"scripts"/"intake.py"),"next","--project",str(self.root/"new")],
-            cwd=self.root,env=env,capture_output=True,text=True)
+            cwd=self.root,env=env,capture_output=True,text=True,encoding="utf-8")
         self.assertEqual(result.returncode,0,result.stderr)
         self.assertEqual(json.loads(result.stdout)["action"],"ask_template")
 

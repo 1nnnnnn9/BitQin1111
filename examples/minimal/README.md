@@ -1,37 +1,11 @@
-# 三页通用示例
+# 三页 v1 兼容示例
 
-主题“从想法到演示”，不是任何用户旧 PPT 的改版。标题、正文、标签与表格都是原生对象。底图由内置 image_gen 生成，不含文字。示例没有真实科研数据、品牌或个人资料。
+这是保留的旧版“从想法到演示”示例，展示原生文字、标签、表格和备注。底图来自内置 image_gen，不含真实实验数据、品牌或个人资料。
 
-## 从零执行
+直接打开 demonstration.pptx 或 previews 查看结果；validation.md 记录历史生成及验证情况。它使用旧的 sample_slide 标量和单页样稿，不是新项目启动模板，也不包含客户批准。不要删除旧来源记录来迁就新流程。
 
-复制本目录到自己的工作目录。通过会话收集已知答案，用 intake.py update 记录；不要让脚本把缺失的用户答案自动设为已确认。下面的命令中，SKILL 是已安装技能目录：
+新项目请使用 [v2 图解示例](../visual-planning/README.md)：schema_version=2、独立配图偏好、逐页 visual_plan 与双样页。默认 init 创建 v2 状态，因此不能直接搭配本目录的 v1 规格进行从零制作。
 
-1. python "$SKILL/scripts/intake.py" init --project .
-2. 按 next 的结果确认模板、风格、素材、大纲与后端；将已知答案保存在 answers.json，用 update --answers answers.json 更新。大纲写成文件后，用 approve --stage outline --artifact outline.md 记录用户确认。
-3. python "$SKILL/scripts/prepare_background_jobs.py" --spec deck_spec.json --sample-only 1
-4. 派发并按 prompts/slide_01.json 调用内置图片工具，复制选定输出到项目，通过 record_slide_result.py 记录真实来源。
-5. python "$SKILL/scripts/assemble_editable_ppt.py" --spec deck_spec.json --output sample.pptx --slides 1
-6. 渲染、看图并交付 sample.pptx 和预览；用 intake.py sample 注册二者，用户确认后执行 approve --stage sample。
-7. prepare_background_jobs.py --spec deck_spec.json 准备余下任务；完成、记录后组装完整 PPTX。
+已有 version=1 项目仍可继续读取其单页批准与图片来源。重做或新增页面前补问配图偏好并规划图解；完整升级建议保留旧项目副本后建立新项目。
 
-无模板时，已知答案的数据示例：
-
-~~~json
-{
-  "template": "none",
-  "style": "清爽专业风",
-  "materials": [],
-  "topic": "从想法到演示",
-  "audience": "普通演示文稿使用者",
-  "slide_count": 3,
-  "backend": {"name": "built-in image tool", "confirmed": true}
-}
-~~~
-
-模板输入可使用 template 路径或数组；检查后 style 记录为 {"name":"提取的风格","inspected":true,"preview":"代表页预览路径"}。不要在未观察预览时写 inspected=true。
-
-## 已生成结果
-
-本仓库附带维护者通用演示的真实底图和 demonstration.pptx，便于快速查看。生成提示词、来源摘要及验证结果在 validation.md。它们是验证独立技能的示例，不能冒充客户确认记录。正常制作仍需遵守样页确认流程。
-
-图像背景不可逐像素编辑；所有新增文字与表格可编辑。图像文件中的内部内容仍属于图片。
+图形、框线和箭头属于图片，新增文字与表格可编辑。

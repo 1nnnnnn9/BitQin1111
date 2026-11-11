@@ -19,7 +19,7 @@
 
 ## 状态脚本
 
-先由 intake.py 完成模板/风格/素材/大纲确认；样页前仅运行 prepare_background_jobs.py --sample-only N。样页实际生成后记录派发和结果，用 assemble_editable_ppt.py --slides N 组装，渲染后请用户确认。
+先由 intake.py 完成模板/风格/素材/配图偏好/大纲确认；新项目读取 visual-planning.md 并填写逐页 visual_plan。样页前仅运行 prepare_background_jobs.py --sample-only 2 8（编号等于声明的 sample_slides）。样页实际生成后记录派发和结果，用 assemble_editable_ppt.py --slides 2 8 组装双样页，渲染后请用户一次确认。单页任务仅传一个编号。
 
 用户确认后记录样页并运行 prepare_background_jobs.py 生成剩余任务。示例：
 ```
@@ -29,3 +29,9 @@ python scripts/record_slide_result.py PROJECT --slide slide_02 --agent-id ACTUAL
 一个子代理只处理一个任务。主代理保存真实生成输出并记录结果。顺序模式 agent-id 为 main。不要手改完成状态。
 
 中文、符号或伪字残留时用原后端修复或重生成，不能用白块掩盖再声称原图无字。重复修复仍失败时报告阻塞，而非无限重试。
+
+需要更改已派发／记录的画面时，先运行 `reset_slide.py --project PROJECT --slide 3 --reason "具体修复原因"`。脚本归档旧任务、图片和来源，再把该页返回 pending；修改规格后重新 prepare、派发、用同一后端生成并记录。重做样页会撤销样页批准，需重新交付确认；不手改完成状态或覆盖来源。
+
+已确认样页的原生文字位置可以调整。展开全稿任务时，如仅留白矩形改变，脚本保留样页原始生成提示词和图片来源，并单独记录确认后的文字位置；改变画面内容、风格、输入图或后端仍需重新生成。
+
+v2 任务把配图偏好、节点几何与连接写入提示词，不发送原生标签字符串；模板风格与 scene_brief 不应覆盖 visual_plan 的关系要求。标签矩形内留白，框线画在外侧，箭头沿计划的节点关系连接。不要对解释性页面使用“禁止所有示意图／箭头”的通用空白母版提示词。正文和表格窗口不得挤占主图，冲突时先调整布局。

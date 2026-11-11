@@ -1,13 +1,15 @@
 # BitQin1111 · Codex PPT Editable
 
 基于 [ningzimu/codex-ppt-skill](https://github.com/ningzimu/codex-ppt-skill) 的独立增强技能。
-**先问模板 → 无模板时选风格 → 再问素材 → 生成无字背景/配图 → 插入原生可编辑文字 → 交付 PPTX。**
+**先问模板 → 无模板时选风格 → 再问素材 → 单独选配图偏好 → 规划逐页图解 → 双样页确认 → 全稿与视觉检查。**
 
 这不是整页截图式 PPT，也不是用代码绘制底图。新绘制的背景、示意图、装饰图标使用 codex-ppt 的图片生成流程；Python 负责文字、用户原图、表格、备注的排版和检查。生成图片可以合并非文字视觉内容，所有新增文字保留为 PowerPoint 对象。
 
-![可编辑示例预览](examples/minimal/previews/slide-01.png)
+**核心目标：保留 codex-ppt 的完整页面视觉效果，仅把新增文字位置留空，最后填入可编辑文字。** 原风格的构图、图解、层次与配图继续由图片模型完成，不把“可编辑”做成统一方框或大表格母版。
 
-[查看三页示例](examples/minimal/demonstration.pptx) · [检查记录](examples/minimal/validation.md)
+![可编辑示例预览](examples/visual-planning/previews/slide-01.png)
+
+[查看新版示例](examples/visual-planning/demonstration.pptx) · [制作与验证说明](examples/visual-planning/README.md) · [旧版兼容示例](examples/minimal/README.md)
 
 ## 安装
 
@@ -29,10 +31,14 @@
 1. 首先确认有无 PPT 模板。已有附件或答案时直接采用，不反复询问。
 2. 有模板：先查看代表性页面，提取配色、字体、视觉语言；默认只参考风格，重新组织版式。没有模板：从内置 12 种 codex-ppt 风格中推荐 2–3 种供选择。
 3. 接着确认素材，包括图片、图标、图表、表格数据和文字。建立使用清单，尽可能采用相关素材，未用素材说明原因。
-4. 确认大纲与素材安排，先制作一页完整的可编辑样页及预览。
-5. 样页获批后完成全稿、逐页检查与备注。
+4. 单独选择配图偏好：简略示意图为主、写实／三维图为主，或按内容混合。已有明确答案不再问；模板和配色不代替此项选择。
+5. 确认大纲与逐页视觉规划。流程、空间、工位、系统关系优先安排适合的图解，详细数据与附录保留表格，不硬设图解页比例。
+6. 先交付常规内容页＋中后段复杂图解页，同一可编辑 PPTX 和各页预览，一次确认后再完成全稿。单页任务仅一页。
+7. 检查全稿缩略图和逐页效果，重点查看后半段的图解质量、表格堆叠、关系方向、文字与数据。最终检查要求真实观察记录，不能用自动结构检查代替看图。
 
 用户原始图表不会交给模型重绘；原图内部的坐标、比例尺和已有标注仍属于图片。新增标题、正文、标签、数字结论与参考文献可直接修改。可读表格数据支持原生表格。不能把“可编辑”解释为原始图片中每个像素或标注均可单独编辑。
+
+新绘制的框线、箭头和图形仍由图片模型生成，属于图片；简略示意图不代表改用代码绘制。新规格使用 schema_version=2 与 sample_slides 数组，旧项目的单页批准和图片来源保持兼容。详细接口见技能内的 references/deck-spec.md 与 references/intake-state.md。
 
 ## 依赖与运行
 
@@ -51,7 +57,9 @@ python skills/codex-ppt-editable/scripts/runtime.py bootstrap
 
 ## 独立使用示例与检查
 
-`examples/minimal/deck_spec.json` 是三页原生对象组装示例；图片通过生成流程取得后再填入对应路径。具体命令见 [示例说明](examples/minimal/README.md)。
+从零制作请看 [v2 图解示例](examples/visual-planning/README.md)。`examples/minimal` 保留旧版原生对象示例及历史来源，不用作新项目启动模板。
+
+旧 minimal 示例保留作为 v1 兼容样本。v2 的配图偏好、双样页及全稿验收命令见 [视觉规划指南](skills/codex-ppt-editable/references/visual-planning.md) 与 [检查流程](skills/codex-ppt-editable/references/quality-and-rendering.md)。用户 PPT、截图与私人验证文件不随仓库发布。
 
 ```sh
 python -m unittest discover -s tests -v

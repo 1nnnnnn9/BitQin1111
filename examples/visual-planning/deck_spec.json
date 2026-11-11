@@ -1,0 +1,352 @@
+{
+  "schema_version": 2,
+  "title": "图解质量升级验证",
+  "canvas": {
+    "width": 1280,
+    "height": 720
+  },
+  "font": "Microsoft YaHei",
+  "style": {
+    "name": "教学课件风",
+    "reference": "教学课件风",
+    "palette": [
+      "#FFFFFF",
+      "#0B2E6D",
+      "#1769AA",
+      "#137C83"
+    ]
+  },
+  "backend": "built-in image tool",
+  "visual_preference": "schematic",
+  "sample_slides": [
+    1,
+    2
+  ],
+  "background_generation_method": {
+    "backend": "built-in image tool",
+    "tool_name": "image_gen",
+    "mode": "generate",
+    "purpose": "Maintainer validation, not client approval"
+  },
+  "assets": [],
+  "slides": [
+    {
+      "number": 1,
+      "background": "origin_image/slide_01.png",
+      "texts": [
+        {
+          "name": "标题",
+          "text": "雨水回用：从收集到供水",
+          "box": [
+            74,
+            57,
+            1120,
+            56
+          ],
+          "font_size": 42,
+          "color": "#173552",
+          "bold": true,
+          "align": "left",
+          "vertical_align": "middle"
+        },
+        {
+          "name": "正文",
+          "text": "三个阶段串联，说明雨水收集到非饮用回用的基本过程",
+          "box": [
+            74,
+            148,
+            1120,
+            42
+          ],
+          "font_size": 24,
+          "color": "#173552",
+          "bold": false,
+          "align": "left",
+          "vertical_align": "middle"
+        },
+        {
+          "name": "结论",
+          "text": "流程示意不代表任何具体工程的设计或处理能力",
+          "box": [
+            74,
+            636,
+            1120,
+            35
+          ],
+          "font_size": 24,
+          "color": "#137C83",
+          "bold": false,
+          "align": "left",
+          "vertical_align": "middle"
+        },
+        {
+          "name": "图示标签_1",
+          "text": "屋面雨水收集",
+          "box": [
+            82,
+            454,
+            304,
+            33
+          ],
+          "font_size": 24,
+          "color": "#173552",
+          "bold": false,
+          "align": "center",
+          "vertical_align": "middle",
+          "role": "diagram_label"
+        },
+        {
+          "name": "图示标签_2",
+          "text": "沉淀与过滤",
+          "box": [
+            494,
+            454,
+            282,
+            33
+          ],
+          "font_size": 24,
+          "color": "#173552",
+          "bold": false,
+          "align": "center",
+          "vertical_align": "middle",
+          "role": "diagram_label"
+        },
+        {
+          "name": "图示标签_3",
+          "text": "储存与非饮用回用",
+          "box": [
+            885,
+            454,
+            310,
+            33
+          ],
+          "font_size": 24,
+          "color": "#173552",
+          "bold": false,
+          "align": "center",
+          "vertical_align": "middle",
+          "role": "diagram_label"
+        }
+      ],
+      "tables": [],
+      "images": [],
+      "scene_brief": "Preserve the complete codex-ppt academic courseware visual quality: expressive subject-relevant educational diagram, clear layered composition, restrained blue/teal accents, meaningful supporting illustrations, coherent visual hierarchy. Reserve only the specified typography windows. Do not reduce the page to empty boxes or a bare white master. No text, numbers, labels, logo or watermark. Diagram geometry may be combined into the background.",
+      "visual_plan": {
+        "purpose": "process",
+        "form": "flowchart",
+        "explanation": "A simple left-to-right three-stage conceptual rainwater collection and non-potable reuse flow. Draw three blank rectangular modules connected by teal arrows. No data or treatment performance is implied.",
+        "box": [
+          64,
+          210,
+          1152,
+          380
+        ],
+        "nodes": [
+          {
+            "id": "n1",
+            "box": [
+              85,
+              320,
+              230,
+              115
+            ],
+            "text_object": "图示标签_1",
+            "shape": "roof runoff collection pictogram with blank label strip"
+          },
+          {
+            "id": "n2",
+            "box": [
+              500,
+              320,
+              230,
+              115
+            ],
+            "text_object": "图示标签_2",
+            "shape": "settling and filtering schematic with blank label strip"
+          },
+          {
+            "id": "n3",
+            "box": [
+              915,
+              320,
+              280,
+              115
+            ],
+            "text_object": "图示标签_3",
+            "shape": "non-potable reuse pictograms with blank label strip"
+          }
+        ],
+        "relations": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "kind": "rightward directed arrow"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "kind": "rightward directed arrow"
+          }
+        ],
+        "resolved_node_boxes": {
+          "n1": [
+            64,
+            298,
+            337,
+            208
+          ],
+          "n2": [
+            477,
+            298,
+            314,
+            208
+          ],
+          "n3": [
+            866,
+            298,
+            349,
+            208
+          ]
+        }
+      },
+      "notes": "本页用三个阶段说明雨水收集、处理和非饮用回用的概念关系，不代表任何具体工程的设计或处理能力。",
+      "sources": [
+        "维护者编写的通用概念示例，不是工程设计建议。"
+      ]
+    },
+    {
+      "number": 2,
+      "background": "origin_image/slide_02.png",
+      "texts": [
+        {
+          "name": "标题",
+          "text": "运行管理：把设施与反馈连接起来",
+          "box": [
+            74,
+            57,
+            1120,
+            56
+          ],
+          "font_size": 42,
+          "color": "#173552",
+          "bold": true,
+          "align": "left",
+          "vertical_align": "middle"
+        },
+        {
+          "name": "正文",
+          "text": "把设施运行、监测记录与运维调度放在同一张系统图里",
+          "box": [
+            74,
+            148,
+            1120,
+            42
+          ],
+          "font_size": 24,
+          "color": "#173552",
+          "bold": false,
+          "align": "left",
+          "vertical_align": "middle"
+        },
+        {
+          "name": "结论",
+          "text": "监测记录支撑调度，异常信息形成反馈闭环",
+          "box": [
+            260,
+            653,
+            800,
+            32
+          ],
+          "font_size": 23,
+          "color": "#137C83",
+          "bold": false,
+          "align": "center",
+          "vertical_align": "middle"
+        },
+        {
+          "name": "图示标签_1",
+          "text": "设施运行",
+          "box": [
+            75,
+            257,
+            320,
+            33
+          ],
+          "font_size": 24,
+          "color": "#FFFFFF",
+          "bold": false,
+          "align": "center",
+          "vertical_align": "middle",
+          "role": "diagram_label"
+        },
+        {
+          "name": "图示标签_2",
+          "text": "监测记录",
+          "box": [
+            500,
+            257,
+            300,
+            33
+          ],
+          "font_size": 24,
+          "color": "#FFFFFF",
+          "bold": false,
+          "align": "center",
+          "vertical_align": "middle",
+          "role": "diagram_label"
+        },
+        {
+          "name": "图示标签_3",
+          "text": "运维调度",
+          "box": [
+            900,
+            257,
+            310,
+            33
+          ],
+          "font_size": 24,
+          "color": "#FFFFFF",
+          "bold": false,
+          "align": "center",
+          "vertical_align": "middle",
+          "role": "diagram_label"
+        },
+        {
+          "name": "图示标签_4",
+          "text": "异常反馈",
+          "box": [
+            500,
+            520,
+            300,
+            27
+          ],
+          "font_size": 24,
+          "color": "#173552",
+          "bold": false,
+          "align": "center",
+          "vertical_align": "middle",
+          "role": "diagram_label"
+        }
+      ],
+      "tables": [],
+      "images": [],
+      "scene_brief": "Preserve the complete codex-ppt academic courseware visual quality: expressive subject-relevant educational diagram, clear layered composition, restrained blue/teal accents, meaningful supporting illustrations, coherent visual hierarchy. Reserve only the specified typography windows. Do not reduce the page to empty boxes or a bare white master. No text, numbers, labels, logo or watermark. Diagram geometry may be combined into the background.",
+      "visual_plan": {
+        "purpose": "system",
+        "form": "systems",
+        "explanation": "Conceptual rainwater facility management architecture. Three upper blocks show operation, monitoring and dispatch; one feedback block below the center is connected bidirectionally. All rectangles are blank.",
+        "box": [
+          64,
+          210,
+          1152,
+          380
+        ],
+        "relationship_brief": "Three upper stages run left to right: facility operation sends telemetry to monitoring, monitoring supports maintenance dispatch. A lower abnormality-feedback element connects bidirectionally with monitoring. Use meaningful flat equipment/monitoring/dispatch pictograms and an explicit feedback loop; do not use four empty identical boxes as the entire visual."
+      },
+      "notes": "设施运行产生监测记录，监测支撑运维调度。异常反馈与监测双向连接，侧路表示对设施处置和运维调度的触发。屏幕中的曲线仅为监测图标，没有真实数据或性能含义。",
+      "sources": [
+        "维护者编写的通用概念示例，不是工程设计建议。"
+      ]
+    }
+  ]
+}

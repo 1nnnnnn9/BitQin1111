@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "slides": 2,
+  "errors": [],
+  "scope": "Object structure/content only; visual inspection still required.",
+  "visual_review": {
+    "ok": true,
+    "errors": [],
+    "scope": "Evidence completeness and freshness, not automated aesthetic judgment"
+  }
+}

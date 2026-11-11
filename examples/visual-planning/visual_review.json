@@ -1,0 +1,45 @@
+{
+  "spec_sha256": "a504763ca7b5d28109ab32eef9e6b518567c9660d6dca67a333cf74cfe17d8c0",
+  "pptx": "demonstration.pptx",
+  "pptx_sha256": "d3d4f3f1988d85e7227f9ebe4f6f6095e6fde6ab10af3c0bec9e43e57a18f463",
+  "montage": "visual_review.montage.png",
+  "montage_sha256": "20d77ba5074278c47430b947a27a093a35a88f2f2e23cf7034ae7081f0d9d23a",
+  "whole_deck": {
+    "visual_balance": true,
+    "later_section_quality": true,
+    "observation": "维护者已查看各页完整预览。配色与字体层次统一；后半段保留解释性图解，没有连续大表格。此为独立维护验证，不能替代未来客户的双样页批准。使用上游教学课件风完整视觉规范，图、背景与装饰由同一内置图片后端绘制，新增文字后叠。"
+  },
+  "slides": [
+    {
+      "number": 1,
+      "preview": "previews/slide-01.png",
+      "sha256": "23c4c2637fa17570fadefcf2cae309b18785c4d56ee6765cbdde06c27beb342a",
+      "checks": {
+        "style_fidelity": true,
+        "visual_matches_plan": true,
+        "relations_correct": true,
+        "text_legible": true,
+        "background_text_free": true,
+        "sources_intact": true,
+        "data_correct": true
+      },
+      "observation": "已查看完整教学风流程页：屋面收集、沉淀过滤与非饮用用途的具体简图清楚，三段箭头从左到右。标题、说明、三处标签和结论均为原生文字，位于模型实际留白区；图形未退化为空白矩形。没有真实工程数据或用户素材，数值校验不适用。"
+    },
+    {
+      "number": 2,
+      "preview": "previews/slide-02.png",
+      "sha256": "0f99b7c19339aba5aa2ede367c66274916b3d6ae2aaf4ef7f8b7b5f91d319886",
+      "checks": {
+        "style_fidelity": true,
+        "visual_matches_plan": true,
+        "relations_correct": true,
+        "text_legible": true,
+        "background_text_free": true,
+        "sources_intact": true,
+        "data_correct": true
+      },
+      "observation": "已查看完整教学风管理页：设施、监测、运维三个主体有对应配图，异常反馈连回监测并触发设施处置与调度。白色标签位于深色标题带，异常标签在浅色带，底部说明避开背景图。屏幕曲线为概念图标而非数据证据，备注已说明；没有实测数据或外部原图。"
+    }
+  ],
+  "scope": "Human observations required. This template does not inspect or approve visual content automatically."
+}

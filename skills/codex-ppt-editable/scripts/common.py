@@ -54,6 +54,7 @@ def check_assets(spec):
     assets=asset_map(spec)
     used={im["asset_id"] for s in spec["slides"] for im in s.get("images",[]) if im.get("asset_id")}
     used|={t["asset_id"] for s in spec["slides"] for t in s.get("tables",[]) if t.get("asset_id")}
+    used|={aid for s in spec["slides"] for aid in s.get("source_asset_ids",[])}
     unknown=used-set(assets)
     if unknown:raise ValueError("Unknown asset ids: "+", ".join(sorted(unknown)))
     for aid,a in assets.items():

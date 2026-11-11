@@ -64,7 +64,18 @@ def validate(spec_path,pptx_path,numbers=None):
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument("--spec",required=True)
     p.add_argument("--pptx",required=True);p.add_argument("--slides",nargs="+",type=int);p.add_argument("--report")
+    p.add_argument("--final",action="store_true",help="Require a current full-deck human visual review for v2 projects")
+    p.add_argument("--visual-review")
     a=p.parse_args();result=validate(a.spec,a.pptx,a.slides)
+    if a.final:
+        _,spec=load_spec(a.spec)
+        if spec.get("schema_version",1)>=2:
+            if a.slides:result["errors"].append("Final validation must cover the whole deck")
+            if not a.visual_review:result["errors"].append("Final v2 validation needs --visual-review")
+            else:
+                from review_deck import check_review
+                result["errors"].extend(check_review(a.spec,a.pptx,a.visual_review)["errors"])
+            result["ok"]=not result["errors"]
     if a.report:
         from common import write_json
         write_json(a.report,result)
