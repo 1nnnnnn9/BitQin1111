@@ -1,0 +1,20 @@
+{
+  "id": 2,
+  "file": "startup-original.wav",
+  "source_url": "https://www.bilibili.com/video/BV1iy4y1n75m/?p=1",
+  "episode": "妈妈要死掉了1",
+  "source_start_seconds": 9.5,
+  "source_end_seconds": 14.5,
+  "quote": "你回来了",
+  "duration_seconds": 5.0,
+  "sample_rate": 48000,
+  "channels": 2,
+  "sha256": "112f23e0ef946846481df3a825f1fe80d22f9f3b34fdeb0f7f1e534d40e5c401",
+  "editing": "Continuous source trim and PCM decode only. No looping, added music, voice synthesis, fades, or volume changes.",
+  "proposed_animation_start_seconds": 7.0,
+  "version": "original-scene-option-2",
+  "animation_duration_seconds": 12,
+  "animation_start_seconds": 7,
+  "animation_end_seconds": 12,
+  "selected_by_user": true
+}

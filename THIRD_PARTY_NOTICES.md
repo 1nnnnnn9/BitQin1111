@@ -28,3 +28,7 @@
 本项目的 MIT 许可只覆盖本项目可许可的代码及资源，不重新授权用户提供的模板、照片、图表、品牌素材或字体。应保留相关归属与来源。
 
 通用示例的无字背景由内置图片生成工具生成，提示词和来源摘要随示例记录，不包含真实实验结果或个人信息。它们用于展示与验证；图片生成并不意味着任何主体拥有排他版权。新增示例文字、布局规格及表格为本项目编写。
+
+## ChatGPT 蜡笔小新启动动画
+
+`projects/chatgpt-shinchan-startup/` 是单独收录的 Windows 启动动画定制。其上游启动动画代码没有指定开源许可证，角色图片和台配原声属于第三方素材；本仓库根目录的 MIT 许可不重新授权该目录。来源与 Microsoft WebView2 组件许可见该目录的 [第三方说明](projects/chatgpt-shinchan-startup/THIRD_PARTY_NOTICES.md) 和 [许可范围](projects/chatgpt-shinchan-startup/LICENSE.md)。

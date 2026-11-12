@@ -1,0 +1,16 @@
+{
+  "name": "chatgpt-shinchan-startup",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:browser": "node tools/test-shinchan.mjs",
+    "test:native": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/test-watcher.ps1"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "playwright": "1.57.0"
+  }
+}

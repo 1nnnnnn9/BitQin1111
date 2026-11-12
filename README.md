@@ -72,4 +72,8 @@ python -m unittest discover -s tests -v
 
 ## 来源与许可
 
-上游固定版本及改动范围见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。保留原作者 MIT 声明；新增部分同样按 MIT 发布。此项目为社区衍生增强版，不代表上游作者或 OpenAI 官方。用户提供的模板、字体、品牌和图片的权利不因代码采用 MIT 而改变。
+上游固定版本及改动范围见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。保留原作者 MIT 声明；PPT 技能新增部分同样按 MIT 发布。此项目为社区衍生增强版，不代表上游作者或 OpenAI 官方。用户提供的模板、字体、品牌和图片的权利不因代码采用 MIT 而改变。
+
+## 其他项目
+
+- [ChatGPT 蜡笔小新启动动画](projects/chatgpt-shinchan-startup/README.md)：Windows 原应用入口的 12 秒开场，带敲键盘动态和最后 5 秒台配原声；提供源码和即用包。该目录的上游代码及第三方素材按目录内许可与来源说明处理，不适用根目录 MIT 许可。
